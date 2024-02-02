@@ -41,3 +41,9 @@ pub fn cborParse(item: cbor.DataItem, options: cbor.Options) !@This() {
         },
     });
 }
+
+pub fn deinit(self: *const @This(), allocator: std.mem.Allocator) void {
+    if (self.pinUvAuthParam) |p| {
+        allocator.free(p);
+    }
+}
