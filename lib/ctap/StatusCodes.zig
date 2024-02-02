@@ -100,6 +100,9 @@ pub const StatusCodes = enum(u8) {
     ctap2_err_spec_last = 0xdf,
     /// Extension specific error.
     ctap2_err_extension_first = 0xe0,
+    /// This status code was introduced by A-WAYF. It is returned
+    /// if no valid IdPs were found.
+    ctap2_err_no_idps = 0xe1,
     /// Extension specific error.
     ctap2_err_extension_last = 0xef,
     /// Vendor specific error.

@@ -31,6 +31,8 @@ pub const Commands = enum(u8) {
     /// All other command codes are reserved for future use and may not be used.
     authenticatorVendorFirst = 0x40,
     authenticatorCredentialManagementYubico = 0x41,
+    /// This a command introduced by the A-WAYF paper and not standardized.
+    authenticatorFederationManagement = 0x42,
     /// Vendor specific implementation.
     authenticatorVendorLast = 0xbf,
 
@@ -49,6 +51,7 @@ pub const Commands = enum(u8) {
             0x0d => return .authenticatorConfig,
             0x40 => return .authenticatorVendorFirst,
             0x41 => return .authenticatorCredentialManagementYubico,
+            0x42 => return .authenticatorFederationManagement,
             0xbf => return .authenticatorVendorLast,
             else => return error.InvalidCommand,
         }

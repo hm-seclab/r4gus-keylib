@@ -62,6 +62,7 @@ pub const ctap = struct {
         pub const ClientPin = @import("ctap/request/ClientPin.zig");
         /// authenticatorCredentialManagement request data structure
         pub const CredentialManagement = @import("ctap/request/CredentialManagement.zig");
+        pub const FederationManagement = @import("ctap/request/FederationManagement.zig");
     };
 
     /// Response data structures
@@ -74,6 +75,7 @@ pub const ctap = struct {
         pub const ClientPin = @import("ctap/response/ClientPin.zig");
         /// authenticatorCredentialManagement response data structure
         pub const CredentialManagement = @import("ctap/response/CredentialManagement.zig");
+        pub const FederationManagement = @import("ctap/response/FederationManagement.zig");
     };
 
     /// Algorithms and data types for crypto
@@ -185,6 +187,7 @@ pub const ctap = struct {
             pub const authenticatorSelection = @import("ctap/commands/authenticator/authenticatorSelection.zig").authenticatorSelection;
             pub const authenticatorCredentialManagement = @import("ctap/commands/authenticator/authenticatorCredentialManagement.zig").authenticatorCredentialManagement;
             pub const GaErr = @import("ctap/commands/authenticator/authenticatorGetAssertion.zig").GaErr;
+            pub const authenticatorFederationManagement = @import("ctap/commands/authenticator/authenticatorFederationManagement.zig").authenticatorFederationManagement;
         };
     };
 
@@ -212,6 +215,7 @@ pub const ctap = struct {
             largeBlobKey,
             minPinLength,
             @"hmac-secret",
+            fedEntity,
         };
 
         /// Map of optional extensions

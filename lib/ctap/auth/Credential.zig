@@ -39,6 +39,10 @@ created: i64,
 /// that you're allowed to keep (some) state, e.g., store the key.
 discoverable: bool = false,
 
+/// The optional field is part of the extension proposed by A-WAYF and
+/// stores the identifier of a federation entity.
+fedEntity: ?[]const u8 = null,
+
 pub fn deinit(self: *const @This(), allocator: std.mem.Allocator) void {
     allocator.free(self.id);
     self.user.deinit(allocator);

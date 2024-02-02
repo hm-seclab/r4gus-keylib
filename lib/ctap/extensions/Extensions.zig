@@ -13,6 +13,9 @@ credProtect: ?fido.ctap.extensions.CredentialCreationPolicy = null,
 /// offline attacks.
 @"hmac-secret": ?fido.ctap.extensions.HmacSecret = null,
 
+/// This extension is propoesd by A-WAYF and not standardized.
+fedEntity: ?[]const u8 = null,
+
 pub fn cborStringify(self: *const @This(), options: cbor.Options, out: anytype) !void {
     return cbor.stringify(self, .{
         .allocator = options.allocator,
